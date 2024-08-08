@@ -1,0 +1,14 @@
+name: Ping Repl
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # This will run the job every 15 minutes
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send ping to Repl
+        run: |
+          curl -X GET "https://your-repl-url"
